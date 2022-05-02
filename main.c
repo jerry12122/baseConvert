@@ -4,6 +4,7 @@
 #include <string.h>
 
 char num[] = {'0', '1', '2', '3', '4', '5', '6','7', '8', '9', 'A', 'B', 'C', 'D','E', 'F'};
+//大數陣列反轉
 void rev(int *a, int la)
 {
     int r[la];
@@ -16,6 +17,7 @@ void rev(int *a, int la)
         a[i] = r[i];
     }
 }
+//大數比較大小
 int judge(int *a,int la,int *b,int lb)
 {
     int i;
@@ -42,6 +44,7 @@ int judge(int *a,int la,int *b,int lb)
         return 1;
     }
 }
+//大數加法
 int add(int *oa, int la, int *ob, int lb, int *r)
 {
     int a[100] = {0};
@@ -80,6 +83,7 @@ int add(int *oa, int la, int *ob, int lb, int *r)
     }
     return ls;
 }
+//大數減法
 int sub(int *oa, int la, int *ob, int lb, int *r)
 {
     int a[100] = {0};
@@ -123,6 +127,7 @@ int sub(int *oa, int la, int *ob, int lb, int *r)
     }
     return ls;
 }
+//大數乘法
 int mul(int *oa, int la, int *ob, int lb, int *r)
 {
     int s[100] = {0};
@@ -170,6 +175,7 @@ int mul(int *oa, int la, int *ob, int lb, int *r)
     }
     return i;
 }
+//大數除法
 int divide(int *oa,int la,int *ob,int lb,int *q,int *r){
     int a[100] = {0};
     int b[100] = {0};
@@ -228,6 +234,7 @@ int divide(int *oa,int la,int *ob,int lb,int *q,int *r){
 
     return ls;
 }
+//大數POW
 int mypow(int time, int *r, int base)
 {
     int base_array[2] = {0};
@@ -279,7 +286,7 @@ int mypow(int time, int *r, int base)
         return ls;
     }
 }
-
+//大數轉換為十進制
 int convertToDecimal(int *dec, char *input, int base, int size)
 {
     int s[100] = {0};
@@ -317,6 +324,7 @@ int convertToDecimal(int *dec, char *input, int base, int size)
     }
     return ls;
 }
+//十進制大數轉換為指定進制
 void convertToBase2(int *a,int la,int base){
     int base_array[2] = {0};
     int len;
@@ -354,8 +362,7 @@ void convertToBase2(int *a,int la,int base){
         printf("%c",num[result[i]]);
     }
 }
-
-
+//輸入檢驗
 int check(char *input,int base1,int size){
     int error = size;
     for(int i=0;i<size;i++){
@@ -395,7 +402,6 @@ int main(int argc, char *argv[]){
         printf("ERROR");
         return 0;
     }
-
     //轉換為10進制
     int dec[100];
     int ldec=convertToDecimal(dec,input,base1,size);
